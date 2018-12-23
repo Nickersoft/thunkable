@@ -1,44 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Enclosed you will find the source code to a brief coding exercise, written in React & TypeScript. If you are reading this, chances are you already know the context and I need not elaborate. That said, there are a few reflections about this exercise I would like to share:
 
-## Available Scripts
+**There are no tests.**
+Obviously, in a production environment, tests would have been written for all of the above components. Initially, I started out copying boilerplate test suites for each of the components, but it began resulting in far too many files and felt like overkill for such a small exercise. Just know that, in reality, those tests would have been written.
 
-In the project directory, you can run:
+**Ant Design required some surprising modifications.**
+While the mockups were obviously built upon [Ant Design](https://ant.design), I was surprised to discovered the nuances in the mockups were just significant enough that full CSS overrides and extensions needed to be added to reach pixel perfection. For example, while the modal's color, border radius, and drop shadow perfectly matched Ant's `<Modal/>` component, its button spacing, footer border, and icon theme did not. As a result, the modal content component had to be rewritten from scratch to match the spec, while Ant's confirmation modals looked almost exactly the same, with the exception of the few non-configurable styling differences. In a professional environment, I'd recommend consulting with design to see if the UI could better align with the adopted design system to minimize code duplication and forced overrides.
 
-### `npm start`
+**There is no CSS.**
+Well, that's not entirely true.. this project utilizes [styled components](https://www.styled-components.com/) (CSS-in-JS), as opposed to separate SASS/CSS files, to provide a more declarative API for overriding the styles of Ant Design. Styled components allow us to extend Ant Design's React components directly and apply styles to them, all the while utilizing React's component markup.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+So instead of:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```jsx
+<List className="projects__list">
+```
 
-### `npm test`
+we can simply use:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```jsx
+<ProjectsList />
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This allows us to keep our markup and our files clean. We can also modify styles based on props automatically as opposed to unnecessary conditionals. My mind jumped to styled components when it occurred to me Ant Design would need to be heavily modified / extended. I thought it would be the most straightforward way to extend and adjust its styles.

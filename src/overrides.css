@@ -1,0 +1,28 @@
+.ant-divider-horizontal.ant-divider-with-text-right:before {
+  width: 80%;
+}
+
+.ant-divider-horizontal.ant-divider-with-text-right:after {
+  width: 20%;
+}
+
+.ant-divider-horizontal.ant-divider-with-text-right {
+  margin: 0;
+}
+
+.ant-modal-footer {
+  border: none;
+  padding: 1.25rem 2.5rem;
+}
+
+.ant-modal-body {
+  padding: 2rem;
+}
+
+.ant-modal {
+  max-width: 27rem;
+}
+
+.ant-modal-footer button + button {
+  margin-left: 1rem;
+}
