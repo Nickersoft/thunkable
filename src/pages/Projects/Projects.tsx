@@ -110,8 +110,13 @@ export class Projects extends Component<Props, State> {
    * Called when the component has updated due to state change
    * This is used to save project state occassionally
    */
-  componentDidUpdate() {
-    saveProjects(this.state.projects);
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    const { projects } = this.state;
+    const { projects: prevProjects } = prevState;
+
+    if (!projects.equals(prevProjects)) {
+      saveProjects(this.state.projects);
+    }
   }
 
   /**

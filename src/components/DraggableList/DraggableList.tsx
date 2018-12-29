@@ -23,6 +23,9 @@ export class DraggableList extends Component<Props> {
     const { dragCompleted, items } = this.props;
 
     // Convert the list items to a mutable array
+    // Not the most ideal solution, as it makes our immutable list mutable,
+    // but for now it allows us to re-use the example logic from the
+    // ReactDnD documentation
     const propItems = items.toArray();
 
     // Dropped outside the list
