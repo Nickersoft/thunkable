@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
+import { Modal } from "antd";
+
 import styled from "styled-components";
 
 import questionIcon from "../../images/icon-question.svg";
-import { Modal } from "antd";
 
 // Inner wrapper of the modal window
 const ModalInner = styled.div`

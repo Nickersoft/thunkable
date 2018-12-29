@@ -22,16 +22,21 @@ const ListItemWrapper = styled.div`
 `;
 
 // The project title on each list element
-const ListItemHeader = styled.span`
+type ListItemHeaderProps = {
+  isEditing: boolean;
+};
+
+const ListItemHeader = styled.span<ListItemHeaderProps>`
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.875rem;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 9rem;
+  width: ${({ isEditing }) => (isEditing ? "calc(9rem + 24px)" : "9rem")};
 
   @media (max-width: 850px) {
-    flex: grow;
+    flex: 1;
+    width: auto;
   }
 `;
 
@@ -156,11 +161,13 @@ class ProjectsListItem extends PureComponent<Props> {
 
     // Only render the edit box if we're creating a new row
     if (isCreating) {
-      contents = <ListItemHeader>{this.getEditField()}</ListItemHeader>;
+      contents = (
+        <ListItemHeader isEditing={true}>{this.getEditField()}</ListItemHeader>
+      );
     } else {
       contents = (
         <>
-          <ListItemHeader>
+          <ListItemHeader isEditing={isEditing}>
             {isEditing ? this.getEditField() : title}
           </ListItemHeader>
           {!isEditing && <ListItemIcon.Edit onClick={this.onEditPressed} />}

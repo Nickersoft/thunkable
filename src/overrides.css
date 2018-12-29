@@ -2,6 +2,16 @@
   width: 80%;
 }
 
+@media (max-width: 850px) {
+  .ant-divider-horizontal.ant-divider-with-text-right:before {
+    width: 95%;
+  }
+
+  .ant-divider-horizontal.ant-divider-with-text-right:after {
+    width: 5%;
+  }
+}
+
 .ant-divider-horizontal.ant-divider-with-text-right:after {
   width: 20%;
 }

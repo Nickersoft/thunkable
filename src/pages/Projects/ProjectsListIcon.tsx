@@ -22,6 +22,14 @@ const ListIconWrapper = styled.div<listIconWrapperProps>`
   &:hover {
     opacity: ${({ hoverOpacity }) => hoverOpacity};
   }
+
+  @media (max-width: 850px) {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
 `;
 
 // The styled Ant Design <Icon> component

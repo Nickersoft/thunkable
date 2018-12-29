@@ -14,7 +14,8 @@ module.exports = function override(config, env) {
       "@font-size-base": "16px",
       "@btn-circle-size": "3.75rem",
       "@layout-body-background": "transparent",
-      "@layout-header-background": "transparent"
+      "@layout-header-background": "transparent",
+      "@layout-header-padding": "0px"
     },
     javascriptEnabled: true
   })(config, env);
