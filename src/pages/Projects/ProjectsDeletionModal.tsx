@@ -31,7 +31,6 @@ const ModalTitle = styled.h6`
   margin: 0;
   padding: 0;
   line-height: 1.875rem;
-  font-family: "Source Sans Pro", sans-serif;
 `;
 
 // The description of the modal
@@ -41,7 +40,6 @@ const ModalDescription = styled.p`
   font-size: 1rem;
   padding: 0;
   color: rgba(0, 0, 0, 0.5);
-  font-family: "Source Sans Pro", sans-serif;
 `;
 
 type Props = {

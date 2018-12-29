@@ -10,6 +10,8 @@ module.exports = function override(config, env) {
 
   config = rewireLess.withLoaderOptions({
     modifyVars: {
+      "@font-family": '"Source Sans Pro", sans-serif',
+      "@font-size-base": "16px",
       "@btn-circle-size": "3.75rem",
       "@layout-body-background": "transparent",
       "@layout-header-background": "transparent"
