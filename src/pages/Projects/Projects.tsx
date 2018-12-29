@@ -53,7 +53,7 @@ const latestProject: Record<Project> = initialProjects.last();
 
 // A persistent index counter to keep track of project IDs
 // to ensure they're always unique
-let projectIndex = latestProject !== null ? latestProject.get("id") + 1 : 0;
+let projectIndex = latestProject ? latestProject.get("id") + 1 : 0;
 
 /**
  * Saved a list of project records to local storage
