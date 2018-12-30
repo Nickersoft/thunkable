@@ -124,7 +124,6 @@ export class Projects extends Component<Props, State> {
    *
    * @param project The project record to delete
    */
-
   deleteProject(project: Record<Project>) {
     const { projects }: State = this.state;
 
