@@ -12,7 +12,7 @@ Obviously, in a production environment, tests would have been written for all of
 While the mockups were obviously built upon [Ant Design](https://ant.design), I was surprised to discovered the nuances in the mockups were just significant enough that full CSS overrides and extensions needed to be added to reach pixel perfection. For example, while the modal's color, border radius, and drop shadow perfectly matched Ant's `<Modal/>` component, its button spacing, footer border, and icon theme did not. As a result, the modal content component had to be rewritten from scratch to match the spec, while Ant's confirmation modals looked almost exactly the same, with the exception of the few non-configurable styling differences. In a professional environment, I'd recommend consulting with design to see if the UI could better align with the adopted design system to minimize code duplication and forced overrides.
 
 **There are no CSS files.**
-This project utilizes [styled components](https://www.styled-components.com/) (CSS-in-JS), as opposed to separate SASS/CSS files, to provide a more declarative API for overriding the styles of Ant Design. Styled components allow us to extend Ant Design's React components directly and apply styles to them, all the while utilizing React's component markup.
+Instead, this project utilizes [styled components](https://www.styled-components.com/) (CSS-in-JS) to provide a more declarative API for overriding the styles of Ant Design. Styled components allow us to extend Ant Design's React components directly and apply styles to them, all the while utilizing React's component markup.
 
 So instead of:
 
